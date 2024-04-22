@@ -1,0 +1,10 @@
+/* Breakpoints (These are the same values that bootstrap use) */
+$phablet__breakpoint: 576px; /* Just a bit bigger than a mobile */
+$tablet__breakpoint: 768px; /* iPads etc */
+$laptop__breakpoint: 992px; /* Laptop Screens */
+$desktop__breakpoint: 1152px; /* Large Desktop Screens */
+$xldesktop__breakpoint: 1366px; /* Extra large desktop screens */
+$xxldesktop__breakpoint: 1600px; /* Extra Extra Large Desktop Screens */
+
+/* Maximum width of our site content */
+$sitewidth: 1366px;
