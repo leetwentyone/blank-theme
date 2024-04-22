@@ -1,0 +1,88 @@
+.equal-block {
+
+    .text-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        aspect-ratio: 1/1;
+        width: 100%;
+        padding: 0 30px;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+            padding: 0 60px;
+            aspect-ratio: unset;
+        }
+    }
+
+    .image-block {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 1/1;
+
+            @include breakpoint(tablet) {
+                height: 100%;
+                object-fit: cover;
+                aspect-ratio: unset;
+            }
+        }
+    }
+
+    &.grey-theme {
+        background-color: $lightgrey;
+        padding: 30px;
+
+        @include breakpoint(tablet) {
+            padding: 60px;
+        }
+    }
+
+    &.fullwidth {
+        @include breakout;
+    }
+
+    &.with-padding {
+
+        .equal-row {
+            padding: 30px;
+
+            &:nth-of-type(odd) {
+                background-color: $lightgrey;
+            }
+        }
+    }
+}
+
+.equal-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+    }
+
+    &.reversed {
+
+        @include breakpoint(tablet) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &.row-item {
+
+        &:nth-of-type(odd) {
+
+            @include breakpoint(tablet) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

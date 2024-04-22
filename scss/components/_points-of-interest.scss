@@ -1,0 +1,124 @@
+.points-of-interest {
+    position: relative;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        @include breakpoint(phablet) {
+            flex-direction: row;
+        }
+    }
+
+    li {
+        list-style-type: none;
+        width: 100%;
+
+        @include breakpoint(phablet) {
+            margin-right: 2%;
+            width: 32%;
+
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+
+            @include breakpoint(phablet) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    &.grey-theme {
+        background-color: $lightgrey;
+        padding: 30px;
+
+        @include breakpoint(desktop) {
+            padding: 60px;
+        }
+    }
+
+    &.dark-theme {
+        background-color: $black;
+        padding: 30px;
+
+        @include breakpoint(desktop) {
+            padding: 60px;
+        }
+
+        h2,p,a {
+            color: $white;
+        }
+
+        .slick-dots li button:before {
+            color: $white;
+        }
+    }
+
+    &.fullwidth {
+        @include breakout;
+
+        ul {
+            @extend .c-container;
+        }
+    }
+
+    &.carousel-mode {
+        padding-bottom: 90px; // Extra padding for spacing between the 'dots' & the bottom of the block
+
+        li {
+            width: auto;
+            margin: 0 10px;
+        }
+    }
+
+    ul.slick-dots {
+        display: block;
+    }
+}
+
+.poi-title {
+    font-size: 18px;
+    line-height: 24px;
+
+    @include breakpoint(phablet) {
+        font-size: 12px;
+        line-height: 18px;
+        padding-right: 20px;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    a {
+        color: $black;
+    }
+}

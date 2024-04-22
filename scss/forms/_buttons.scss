@@ -1,0 +1,85 @@
+.btn {
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px 25px;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.dark-outline {
+    @extend .btn;
+    border-color: $black;
+    color: $black;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.dark-solid {
+    @extend .btn;
+    border-color: $black;
+    background-color: $black;
+    color: $white;
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+
+    &:visited {
+        color: $white;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.white-outline {
+    @extend .btn;
+    border-color: $white;
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+}
+
+.white-solid {
+    @extend .btn;
+    border-color: $white;
+    background-color: $white;
+    color: $black;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.default {
+    color: $black;
+}
+
+.btn-rounded {
+    border-radius: 30px;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

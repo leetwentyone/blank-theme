@@ -1,0 +1,116 @@
+.textblock {
+
+    h2 {
+        margin-bottom: 60px;
+        text-align: left;
+    }
+
+    &.grey-theme {
+        background-color: $lightgrey;
+    }
+
+    &.dark-theme {
+        background-color: $black;
+
+        h1,h2,h3,h4,h5,h6,p {
+            color: $white;
+        }
+
+        p {
+            a {
+                color: $white;
+            }
+        }
+    }
+
+    &.with-padding {
+        padding: 60px 30px;
+
+        @include breakpoint(desktop) {
+            padding: 60px;
+        }
+    }
+
+    &.fullwidth {
+        @include breakout;
+    }
+
+    &.centered {
+        text-align: center;
+
+        .textblock-btns {
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    ul,
+    ol {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.layout-2--columns {
+
+    h2 {
+        width: 100%;
+        text-align: left;
+
+        @include breakpoint(tablet) {
+            text-align: center;
+        }
+    }
+
+    .layout-container {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+        }
+    }
+
+    .col-1 {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+            padding-right: 2%;
+        }
+    }
+
+    .col-2 {
+        width: 100%;
+        margin-top: 60px;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+            padding-left: 2%;
+            margin-top: 0;
+        }
+    }
+}
+
+.textblock-btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 60px;
+
+    a {
+        &:not(:first-of-type) {
+            margin-left: 10px;
+        }
+    }
+}

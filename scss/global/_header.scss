@@ -1,0 +1,37 @@
+header.site-header {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    @extend .c-container;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .menu-toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        width: 30px;
+        height: 30px;
+
+        @media(max-width: 991px) {
+            display: flex;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.site-logo {
+    width: 150px;
+
+    img {
+        width: 100%;
+    }
+}

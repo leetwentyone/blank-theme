@@ -1,0 +1,168 @@
+.accordion {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+
+    h2,h3,h4,h5,h6 {
+        &:not(.accordion-content  h2,h3,h4,h5,h6) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+	p {
+		&:not(.accordion-content p) {
+            width: 100%;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+		}
+	}
+
+    &.thin-version {
+        .accordion-container {
+            max-width: 900px;
+        }
+    }
+
+    &.grey-theme {
+        background-color: $lightgrey;
+        padding: 30px;
+
+        @include breakpoint(desktop) {
+            padding: 60px;
+        }
+    }
+}
+
+.accordion-container {
+	max-width: $sitewidth;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.accordion-item {
+	display: block;
+	position: relative;
+	width: 100%;
+
+	.accordion-heading {
+		padding: 20px 50px 20px 20px;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-family: $silka;
+		color: $black;
+        font-size: 16px;
+        line-height: 22px;
+		border-top: 1px solid $black;
+		background-image: url('images/icons/select-arrow.png');
+		background-repeat: no-repeat;
+		background-size: 10px;
+		background-position: top 50% right 20px;
+
+        @include breakpoint(desktop) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+	}
+
+	&:last-of-type {
+
+		.accordion-heading {
+			border-bottom: 1px solid $black;
+		}
+
+		.active-tab {
+			border-bottom: 0;
+		}
+	}
+
+	.active-tab {
+		background-image: url('images/icons/up-arrow.png');
+		border-bottom: 0;
+	}
+
+	.accordion-content {
+		padding: 30px 20px;
+
+        p {
+            &:only-child {
+                margin-bottom: 0;
+            }
+        }
+
+		ul,
+		ol {
+			padding-left: 15px;
+		}
+
+		&.open {
+            display: table;
+			border-top: 1px solid $black;
+		}
+
+        .alignleft {
+            float: left;
+            position: relative;
+            clear: both;
+            width: 50%;
+            margin: 0 20px 0 0;
+        }
+
+        .alignright {
+            float: right;
+            position: relative;
+            clear: both;
+            width: 50%;
+            margin: 0 0 0 20px;
+        }
+
+        .size-large {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .size-medium {
+            width: 50%;
+        }
+
+        .size-thumbnail {
+            width: 20%;
+        }
+	}
+
+    .two-col {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+        }
+
+        &.open {
+            display: flex;
+        }
+    }
+
+    .col-1 {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+            padding-right: 2%;
+        }
+    }
+
+    .col-2 {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+            padding-left: 2%;
+        }
+    }
+}

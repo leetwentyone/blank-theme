@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+}
+  
+th,
+td {
+   padding: 15px;
+}
+
+thead {
+    background-color: $darkgrey;
+
+    td {
+        color: $white;
+
+        &:nth-of-type(even) {
+            border-left: 1px solid $lightgrey;
+            border-right: 1px solid $lightgrey;
+        }
+    }
+}
+
+tbody {
+
+    tr {
+        &:nth-of-type(even) {
+            background-color: $lightgrey;
+        }
+
+        &:last-of-type {
+            border-bottom: 1px solid $midgrey;
+        }
+    }
+
+    td {
+        &:nth-of-type(1) {
+            border-left: 1px solid $midgrey;
+        }
+
+        &:nth-of-type(even) {
+            border-left: 1px solid $midgrey;
+            border-right: 1px solid $midgrey;
+        }
+
+        &:last-of-type {
+            border-right: 1px solid $midgrey;
+        }
+    }
+}

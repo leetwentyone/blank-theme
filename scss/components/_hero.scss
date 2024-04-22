@@ -1,0 +1,135 @@
+/* Base styles */
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+
+    picture,
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    &.fullwidth {
+        @include breakout;
+    }
+}
+
+/* Hero Text */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &.left-aligned {
+        align-items: flex-start;
+        padding-left: 40px;
+    }
+
+    &.center-aligned {
+        align-items: center;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        width: 80%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+        }
+    }
+}
+
+.hero-title {
+    font-size: 28px;
+    line-height: 38px;
+}
+
+/* Hero Dark Overlay */
+.hero-dark--overlay {
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, .8);
+    }
+
+    .hero-title,
+    p {
+        position: relative;
+        color: $white;
+    }
+}
+
+/* Hero Light Overlay */
+.hero-light--overlay {
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($white, .8);
+    }
+
+    .hero-title,
+    p {
+        position: relative;
+        color: $black;
+    }
+}
+
+/* Hero Slider */
+.hero-slider {
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.hero-text--slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .hero-text {
+        height: 100%;
+    }
+
+    .hero-text {
+        position: relative;
+    }
+
+    .left-aligned {
+        padding-left: 80px;
+    }
+}
