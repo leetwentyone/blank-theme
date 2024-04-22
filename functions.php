@@ -151,8 +151,41 @@ add_action( 'wp_enqueue_scripts', 'blank_scripts' );
 
 
 
-/* Custom Scripts */
+/* Make ACF Option available */
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
+
+/* Automatically populate the services select menu field */
+function acf_load_color_field_choices( $field ) {
+    
+    // Reset choices
+    $field['choices'] = array();
+
+    // Check to see if Repeater has rows of data to loop over
+    if( have_rows('our_services', 'option') ) {
+        
+        // Execute repeatedly as long as the below statement is true
+        while( have_rows('our_services', 'option') ) {
+            
+            // Return an array with all values after the loop is complete
+            the_row();
+            
+            // Variables
+            $value = get_sub_field('service');
+            $label = get_sub_field('service');
+
+            // Append to choices
+            $field['choices'][ $value ] = $label;
+            
+        }
+    }
+
+    // Return the field
+    return $field;
+    
+}
+
+add_filter('acf/load_field/name=services_offered', 'acf_load_color_field_choices');
+add_filter('acf/load_field/name=department', 'acf_load_color_field_choices');
