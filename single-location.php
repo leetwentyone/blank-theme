@@ -65,6 +65,25 @@ get_header();
 						</div>
 					<?php endif; ?>
 
+					<?php
+						$today = date("l");
+					?>
+
+					<?php if(have_rows('opening_times')) : ?>
+						<table>
+							<?php while(have_rows('opening_times')) : the_row(); ?>
+								<?php if($today == get_sub_field('day_of_week')) { ?>
+									<tr class="current-day">
+								<?php } else { ?>
+									<tr>
+								<?php } ?>
+									<td><?php echo get_sub_field('day_of_week'); ?></td>
+									<td><?php if(get_sub_field('closed')) { ?>Closed<?php } else { ?> <?php echo get_sub_field('opening_time'); ?> - <?php echo get_sub_field('closing_time'); ?> <?php } ?></td>
+								</tr>
+							<?php endwhile; ?>
+						</table>
+					<?php endif; ?>
+
 				</div>
 			<?php endif; ?>
 
@@ -112,7 +131,6 @@ get_header();
 
 					<ul>
 						<?php foreach( $location_team as $post ): 
-
 							// Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); ?>
 							<li>
