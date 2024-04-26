@@ -138,6 +138,7 @@ get_header();
 							</li>
 						<?php endforeach; ?>
 					</ul>
+					
 				</div>
 
 				<?php 
