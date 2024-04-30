@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				blank_posted_on();
-				blank_posted_by();
+				bloc_posted_on();
+				bloc_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php blank_post_thumbnail(); ?>
+	<?php bloc_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blank' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bloc' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blank' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bloc' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php blank_entry_footer(); ?>
+		<?php bloc_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

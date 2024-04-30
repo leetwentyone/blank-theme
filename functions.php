@@ -189,3 +189,10 @@ function acf_load_color_field_choices( $field ) {
 
 add_filter('acf/load_field/name=services_offered', 'acf_load_color_field_choices');
 add_filter('acf/load_field/name=department', 'acf_load_color_field_choices');
+
+/* Custom Post Excerpt */
+function my_excerpt_length($length){ 
+	return 20; 
+} 
+  
+add_filter('excerpt_length', 'my_excerpt_length');

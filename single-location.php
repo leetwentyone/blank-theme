@@ -134,6 +134,7 @@ get_header();
 							// Setup this post for WP functions (variable must be named $post).
 							setup_postdata($post); ?>
 							<li>
+								<?php the_post_thumbnail(); ?>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</li>
 						<?php endforeach; ?>

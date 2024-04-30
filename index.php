@@ -16,42 +16,59 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<div class="c-container">
 
-		<?php
-		if ( have_posts() ) :
+			<?php if ( have_posts() ) : 
+				$post_count = 0; // Initialize a counter. ?>
+				<ul class="blog-listing">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+					<?php while ( have_posts() ) : the_post(); 
+						$post_count++; ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+						<?php
+							// Display the banner after every 6 posts.
+							if ( $post_count % 6 === 0 ) { ?>
+							<div class="listing-banner">
+								<?php 
+									$post_banner = get_field('post_banner','option');
+									if( !empty( $post_banner  ) ): ?>
+    									<img src="<?php echo esc_url($post_banner ['url']); ?>" alt="<?php echo esc_attr($post_banner ['alt']); ?>" />
+									<?php endif; 
+								?>
+							</div>
+						<?php } ?>
+						<li>
+							<!-- Post content goes here -->
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<div class="entry-content">
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<?php the_excerpt(); ?>
+								<a class="readmore" href="<?php the_permalink(); ?>">Read Article</a>
+							</div>
+						</li>
+					<?php endwhile; ?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				</ul>
 
-			endwhile;
+				<!-- Post Navigation -->
+				<?php if ( get_previous_posts_link() || get_next_posts_link() ) : ?>
+					<div class="post-navigation">
+						<?php if ( get_previous_posts_link() ) : ?>
+							<div class="nav-previous"><?php previous_posts_link( 'Previous Page' ); ?></div>
+						<?php endif; ?>
+						<?php if ( get_next_posts_link() ) : ?>
+							<div class="nav-next"><?php next_posts_link( 'Next Page' ); ?></div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 
-			the_posts_navigation();
+				<?php else : ?>
+					<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+				<?php endif; ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
+		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
