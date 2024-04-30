@@ -175,6 +175,32 @@ li {
         margin-right: 2%; }
       .locations li:nth-of-type(3n) {
         margin-right: 0; } }
+  .locations li a:not(.location-content a) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto; }
+  .locations li img {
+    width: 100%;
+    height: auto; }
+
+.location-content {
+  padding: 20px; }
+  .location-content .phone a {
+    color: #495057; }
+  .location-content .email a {
+    color: #495057; }
+  .location-content:has(.phone) .location-name {
+    margin-bottom: 10px; }
+  .location-content:has(.email) .location-name {
+    margin-bottom: 10px; }
+
+.location-name {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000; }
 
 .location-details {
   background-color: #eee;
@@ -206,5 +232,140 @@ li {
   padding-bottom: 60px; }
   .location-team ul {
     padding-left: 15px; }
+
+.location_intro {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center; }
+  .location_intro h1 {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 70px; }
+  .location_intro p {
+    font-size: 24px;
+    line-height: 32px; }
+    .location_intro p:last-of-type {
+      margin-bottom: 0; }
+
+.team-members ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+.team-members li {
+  list-style: none;
+  padding: 10px;
+  background-color: #eee;
+  width: 49%;
+  margin-right: 2%;
+  margin-bottom: 2%; }
+  .team-members li:nth-of-type(2n) {
+    margin-right: 0; }
+  @media (min-width: 768px) {
+    .team-members li {
+      width: 32%; }
+      .team-members li:nth-of-type(2n) {
+        margin-right: 2%; }
+      .team-members li:nth-of-type(3n) {
+        margin-right: 0; } }
+  .team-members li a:not(.location-content a) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto; }
+  .team-members li img {
+    width: 100%;
+    height: auto; }
+
+.member-content {
+  padding: 20px; }
+
+.member-name {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000; }
+
+.blog-listing {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .blog-listing li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 2%; }
+    @media (min-width: 576px) {
+      .blog-listing li {
+        width: 48%;
+        margin-right: 1%;
+        margin-left: 1%; } }
+    @media (min-width: 768px) {
+      .blog-listing li {
+        width: 31.333%; } }
+    .blog-listing li img {
+      height: auto; }
+    .blog-listing li .entry-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100%;
+      padding: 20px; }
+      .blog-listing li .entry-content h2 {
+        font-size: 20px;
+        line-height: 26px; }
+        .blog-listing li .entry-content h2 a {
+          color: #000; }
+      .blog-listing li .entry-content p {
+        margin-top: auto; }
+    .blog-listing li .readmore {
+      color: #000;
+      text-decoration: underline; }
+      .blog-listing li .readmore:hover {
+        text-decoration: none; }
+
+.post-navigation {
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.nav-next {
+  display: block;
+  position: relative;
+  padding: 15px;
+  background-color: #000;
+  margin-left: auto; }
+  .nav-next a {
+    color: #fff; }
+
+.nav-previous {
+  display: block;
+  position: relative;
+  padding: 15px;
+  background-color: #000;
+  margin-right: auto; }
+  .nav-previous a {
+    color: #fff; }
+
+.listing-banner {
+  width: 100%;
+  padding: 10px;
+  background-color: #eee;
+  margin-bottom: 2%; }
+  @media (min-width: 576px) {
+    .listing-banner {
+      width: 48%;
+      margin-right: 1%;
+      margin-left: 1%; } }
+  @media (min-width: 768px) {
+    .listing-banner {
+      width: 31.333%; } }
 
 /*# sourceMappingURL=style.css.map */
