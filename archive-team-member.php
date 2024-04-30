@@ -15,7 +15,7 @@ get_header();
 
 			<div class="archive-intro">
 				<h1 class="page-title">Our Team</h1>
-				<?php echo get_field('team_archive_description','option'); ?>
+				<?php echo get_field('team_archive_intro','option'); ?>
 			</div><!-- archive intro -->
 
 			<?php

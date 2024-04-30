@@ -14,12 +14,10 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			<div class="archive-intro">
+				<h1 class="page-title">News</h1>
+				<?php echo get_field('blog_archive_intro','option'); ?>
+			</div><!-- archive intro -->
 
 			<?php
 			/* Start the Loop */
